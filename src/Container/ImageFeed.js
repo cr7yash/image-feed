@@ -44,7 +44,7 @@ export default function ImageFeed() {
         >
           <div className="imgContainer">
             {image.map((image) => (
-              <Images url={image.urls.thumb} key={image.id} />
+              <Images url={image.urls.thumb} id={image.id} />
             ))}
           </div>
         </InfiniteScroll>
