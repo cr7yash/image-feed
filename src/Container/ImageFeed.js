@@ -9,7 +9,8 @@ import "./ImageFeed.css";
 export default function ImageFeed() {
   const [image, setImage] = useState([]);
   const [error, setError] = useState("");
-
+  const [imageList, setImageList] = useState([]);
+  // console.log(imageList);
   useEffect(() => {
     fetchImages();
   }, []);
@@ -17,15 +18,18 @@ export default function ImageFeed() {
   const fetchImages = (count = 10) => {
     const apiRoot = "https://api.unsplash.com";
     const accessKey = "xKPd-ca-OM64AUngVU5hYDv3I6B1EOHecqElS547_dM";
+
     axios
       .get(
         `${apiRoot}/photos/random?client_id=${accessKey}&count=${count}&orientation=portrait`
       )
       .then((res) => {
+        // console.log(res.data);
         setImage([...image, ...res.data]);
+        setImageList(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setError(err);
       });
   };
@@ -44,7 +48,7 @@ export default function ImageFeed() {
         >
           <div className="imgContainer">
             {image.map((image) => (
-              <Images url={image.urls.thumb} id={image.id} />
+              <Images imageList={imageList} url={image} id={image.id} />
             ))}
           </div>
         </InfiniteScroll>
