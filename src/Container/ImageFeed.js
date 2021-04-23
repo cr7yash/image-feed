@@ -16,7 +16,8 @@ export default function ImageFeed() {
 
 	const fetchImages = (count = 50) => {
 		const apiRoot = 'https://api.unsplash.com';
-		const accessKey = 'xKPd-ca-OM64AUngVU5hYDv3I6B1EOHecqElS547_dM'; // Hide the api key through dotenv
+		//Todo Hide the api key through dotenv
+		const accessKey = 'xKPd-ca-OM64AUngVU5hYDv3I6B1EOHecqElS547_dM';
 
 		axios
 			.get(
