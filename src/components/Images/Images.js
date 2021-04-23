@@ -51,7 +51,8 @@ export default function Images({ imageList, url, id }) {
   if (!Array.isArray(imageList) || imageList.length <= 0) {
     return null;
   }
-  // console.log(imageList);
+  console.log(url);
+  console.log(imageList);
   return (
     <div>
       <img onClick={openModal} key={id} src={url.urls.thumb} alt="" />
@@ -66,11 +67,11 @@ export default function Images({ imageList, url, id }) {
         <AiOutlineArrowLeft onClick={prevSlide} />
         <AiOutlineArrowRight onClick={nextSlide} />
         {imageList.map((image, id) => {
-          console.log(image);
+          // console.log(image);
           return (
             <div className={id === current ? "slide active" : "slide"} key={id}>
               {id === current && (
-                <img alt="" className="image" src={url.urls.regular} />
+                <img alt="" className="image" src={image.urls.regular} />
               )}
             </div>
           );
