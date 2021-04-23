@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import './Images.css';
 
+// Modal and Backdrop styles
 const customStyles = {
 	overlay: {
 		position: 'fixed',
@@ -31,8 +32,6 @@ export default function Images({ imageList, url, id }) {
 
 	const length = imageList.length;
 
-	// console.log(length);
-
 	function openModal() {
 		setModalIsOpen(true);
 	}
@@ -51,8 +50,6 @@ export default function Images({ imageList, url, id }) {
 	if (!Array.isArray(imageList) || imageList.length <= 0) {
 		return null;
 	}
-	console.log(url);
-	console.log(imageList);
 	return (
 		<div>
 			<img onClick={openModal} key={id} src={url.urls.thumb} alt='' />
@@ -73,7 +70,6 @@ export default function Images({ imageList, url, id }) {
 					onClick={nextSlide}
 				/>
 				{imageList.map((image, id) => {
-					console.log(image);
 					return (
 						<div
 							className={
