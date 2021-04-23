@@ -49,7 +49,7 @@ export default function ImageFeed() {
 							<Images
 								imageList={imageList}
 								url={image}
-								id={image.id}
+								key={image.id}
 							/>
 						))}
 					</div>
