@@ -32,7 +32,8 @@ export default function Images({ imageList, url, id }) {
 
 	const length = imageList.length;
 
-	function openModal() {
+	function openModal(id) {
+		setCurrent(id);
 		setModalIsOpen(true);
 	}
 	function closeModal() {
@@ -50,12 +51,15 @@ export default function Images({ imageList, url, id }) {
 	if (!Array.isArray(imageList) || imageList.length <= 0) {
 		return null;
 	}
-	console.log(url);
-	// console.log(key);
 
 	return (
 		<div>
-			<img onClick={openModal} key={id} src={url.urls.thumb} alt='' />
+			<img
+				onClick={() => openModal(id)}
+				key={id}
+				src={url.urls.thumb}
+				alt=''
+			/>
 			<Modal
 				ariaHideApp={false}
 				closeTimeoutMS={200}
@@ -89,7 +93,7 @@ export default function Images({ imageList, url, id }) {
 							)}
 						</div>
 					);
-				})}
+				})}{' '}
 			</Modal>
 		</div>
 	);
