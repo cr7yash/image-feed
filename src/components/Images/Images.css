@@ -2,6 +2,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  padding: 50% 0;
+  cursor: pointer;
+
 }
 
 .ReactModal__Overlay {
@@ -20,8 +23,8 @@
 .right-arrow {
   position: absolute;
   top: 50%;
-  right: 32px;
-  font-size: 3rem;
+  right: 0px;
+  font-size: 2rem;
   color: #000;
   z-index: 10;
   cursor: pointer;
@@ -31,8 +34,8 @@
 .left-arrow {
   position: absolute;
   top: 50%;
-  left: 32px;
-  font-size: 3rem;
+  left: 0px;
+  font-size: 2rem;
   color: #000;
   z-index: 10;
   cursor: pointer;
@@ -41,28 +44,17 @@
 
 .slide {
   opacity: 0;
-  transition-duration: 1s ease;
+  transition-duration: 0.5s ease;
 }
 
 .slide.active {
   opacity: 1;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   transform: scale(1.08);
 }
 
-/* .Modal {
-  position: fixed;
-  z-index: 500;
-  background-color: white;
-  width: 70%;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px black;
-  padding: 16px;
-  left: 15%;
-  top: 30%;
-  box-sizing: border-box;
-  transition: all 0.3s ease-out;
-} */
 .image {
-  width: 300px;
+  width:300px;
+  overflow: hidden;
+  height:auto;
 }
