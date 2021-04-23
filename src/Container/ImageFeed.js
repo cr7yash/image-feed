@@ -45,13 +45,16 @@ export default function ImageFeed() {
 					style={{ overflow: 'hidden' }}
 				>
 					<div className='imgContainer'>
-						{image.map((image) => (
-							<Images
-								imageList={imageList}
-								url={image}
-								key={image.id}
-							/>
-						))}
+						{image.map((image) => {
+							console.log(image.id);
+							return (
+								<Images
+									imageList={imageList}
+									url={image}
+									id={image.id}
+								/>
+							);
+						})}
 					</div>
 				</InfiniteScroll>
 			</div>

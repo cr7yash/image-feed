@@ -50,6 +50,9 @@ export default function Images({ imageList, url, id }) {
 	if (!Array.isArray(imageList) || imageList.length <= 0) {
 		return null;
 	}
+	console.log(url);
+	// console.log(key);
+
 	return (
 		<div>
 			<img onClick={openModal} key={id} src={url.urls.thumb} alt='' />
