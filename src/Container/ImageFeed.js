@@ -14,7 +14,7 @@ export default function ImageFeed() {
 		fetchImages();
 	}, []);
 
-	const fetchImages = (count = 10) => {
+	const fetchImages = (count = 50) => {
 		const apiRoot = 'https://api.unsplash.com';
 		const accessKey = 'xKPd-ca-OM64AUngVU5hYDv3I6B1EOHecqElS547_dM'; // Hide the api key through dotenv
 
@@ -45,13 +45,12 @@ export default function ImageFeed() {
 					style={{ overflow: 'hidden' }}
 				>
 					<div className='imgContainer'>
-						{image.map((image) => {
-							console.log(image.id);
+						{image.map((image, id) => {
 							return (
 								<Images
 									imageList={imageList}
 									url={image}
-									id={image.id}
+									id={id}
 								/>
 							);
 						})}
